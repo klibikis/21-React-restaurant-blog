@@ -1,0 +1,94 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "postId": 1,
+      "name": "Lido",
+      "description": "All guides stated that Lido is a place to tick on the list when visiting Riga, hence we have attended. It is a bit odd self service place where is took us a moment to figure out how this whole concept works. Some of the items you on a tray yourself and some are handed by the chefs. Food is decent and if you know what you fancy you can get a cheap and tasty meal but we went a bit overboard as we wanted to try many things. One tip from me though - the draught beer taps are not really beers but local low alcohol concoctions. A bit odd tasting but local vibe was achieved.",
+      "foodStars": 4,
+      "serviceStars": 4,
+      "valueStars": 4,
+      "atmosphereStars": 5,
+      "image": "https://pic.la.lv/2021/07/LET_24588760-1-800x529.jpg",
+      "location": "Krasta iela 76, Latgales priekšpilsēta, Riga"
+    },
+    {
+      "id": 2,
+      "postId": 2,
+      "name": "Wolt",
+      "description": "Nice variety of restaurants and accurate delivery times. Nice and easy to use on lazy days!",
+      "foodStars": 3,
+      "serviceStars": 1,
+      "valueStars": 4,
+      "atmosphereStars": 2,
+      "image": "https://www.alksnis.eu/oadiwhop/2020/10/wolt_logo.jpg",
+      "location": "Home delivery"
+    },
+    {
+      "id": 3,
+      "postId": 3,
+      "name": "Ausmena Kebab",
+      "description": "We’re locals and this place is our most favorite take-out spot! The kebabs are amazing. As a vegetarian I go for the falafel one and am more than excited every time! Haven’t really been in the cafe itself, so can’t comment much on it, but I’ve been in contact with the team and they were amazing enough to figure out the nutritional value of our favorite dishes!",
+      "foodStars": 4,
+      "serviceStars": 4,
+      "valueStars": 4,
+      "atmosphereStars": 2,
+      "image": "https://cdntest.db.lv/lvold/735/2019/articles/2018/11/481550__5bfb776c33b4d.jpg",
+      "location": "Skolas iela 12, Riga Latvia"
+    },
+    {
+      "id": 4,
+      "postId": 4,
+      "name": "Street Burgers",
+      "description": "We ordered a gourmet burger and pulled pork box. My burger was delivered a bit later, but it was worth the wait - medium rare, with tasty fries. As it should be. Easily at the top 5 of burgers I’ve tried in my life. Highly recommend.",
+      "foodStars": 5,
+      "serviceStars": 5,
+      "valueStars": 3,
+      "atmosphereStars": 5,
+      "image": "https://images.bolt.eu/store/2020/2020-04-21/1c5b95c8-4e50-4025-a7f6-4995e17fad71.jpeg",
+      "location": "Blaumana iela 10, Riga Latvia"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "comment": "Ate salads for 15 euro"
+    },
+    {
+      "id": 1,
+      "postId": 1,
+      "comment": "Me like chriistmas tree a lot much"
+    },
+    {
+      "id": 2,
+      "postId": 2,
+      "comment": "Fast delivery, cheap prices"
+    },
+    {
+      "id": 2,
+      "postId": 2,
+      "comment": "I didn't like delivery mans face"
+    },
+    {
+      "id": 3,
+      "postId": 3,
+      "comment": "No place to sit and eat"
+    },
+    {
+      "id": 3,
+      "postId": 3,
+      "comment": "Great fame, crappy kebab"
+    },
+    {
+      "id": 4,
+      "postId": 4,
+      "comment": "Nom-Nom-Nom"
+    },
+    {
+      "id": 4,
+      "postId": 4,
+      "comment": "Stopped here a couple of times while in Riga on business.First time I had just the street burger and fries. Pretty good over all. The second one I had the BBQ burger, again a decent burger. Fries are pretty tasty. Service was quick and very friendly."
+    }
+  ]
+}
