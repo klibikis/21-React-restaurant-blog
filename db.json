@@ -2,7 +2,6 @@
   "restaurants": [
     {
       "id": 1,
-      "postId": 1,
       "name": "Lido",
       "description": "All guides stated that Lido is a place to tick on the list when visiting Riga, hence we have attended. It is a bit odd self service place where is took us a moment to figure out how this whole concept works. Some of the items you on a tray yourself and some are handed by the chefs. Food is decent and if you know what you fancy you can get a cheap and tasty meal but we went a bit overboard as we wanted to try many things. One tip from me though - the draught beer taps are not really beers but local low alcohol concoctions. A bit odd tasting but local vibe was achieved.",
       "foodStars": 4,
@@ -14,7 +13,6 @@
     },
     {
       "id": 2,
-      "postId": 2,
       "name": "Wolt",
       "description": "Nice variety of restaurants and accurate delivery times. Nice and easy to use on lazy days!",
       "foodStars": 3,
@@ -26,7 +24,6 @@
     },
     {
       "id": 3,
-      "postId": 3,
       "name": "Ausmena Kebab",
       "description": "We’re locals and this place is our most favorite take-out spot! The kebabs are amazing. As a vegetarian I go for the falafel one and am more than excited every time! Haven’t really been in the cafe itself, so can’t comment much on it, but I’ve been in contact with the team and they were amazing enough to figure out the nutritional value of our favorite dishes!",
       "foodStars": 4,
@@ -38,7 +35,6 @@
     },
     {
       "id": 4,
-      "postId": 4,
       "name": "Street Burgers",
       "description": "We ordered a gourmet burger and pulled pork box. My burger was delivered a bit later, but it was worth the wait - medium rare, with tasty fries. As it should be. Easily at the top 5 of burgers I’ve tried in my life. Highly recommend.",
       "foodStars": 5,

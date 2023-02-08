@@ -25,7 +25,7 @@ const RestaurantsPage = () => {
     }
 
     const characterList = useQuery({
-        queryKey: ["characters"],
+        queryKey: ["restaurants"],
         queryFn: getRestaurants,
     })
 

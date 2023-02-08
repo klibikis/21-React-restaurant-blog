@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import style from "./Comments.module.scss";
 import { useState } from "react";
 import axios from "axios";
@@ -36,21 +35,13 @@ const Comments = ({id}: CommentsProps) => {
 
     const { mutate, isLoading, isError, error: postError } = postComment()
         
-
-    //     if(mutation.status === "loading")<h1>Loading...</h1>
-    //     if(mutation.status === "error")<h1>Error</h1>
-    //     if(mutation.status === "success")console.log("YEsss")
-    // }
-
-
-
     const handleCommentSubmit = () => {
         mutate(commentValue)
         if(isLoading===true)<h1>Loading..........</h1>
         if(isError===true)<h1>Error</h1>
-        
         setCommentValue("")
     }
+
 
     const {status, error, data} = useQuery({
         queryKey: ["comment", id],
@@ -58,9 +49,7 @@ const Comments = ({id}: CommentsProps) => {
     })
 
     if (status === "loading") return <h1>Loading...</h1>
-    if (status === "error") return <h1>{JSON.stringify(error)}</h1>
-
-
+    if (!data) return <h1>{JSON.stringify(error)}</h1>
 
     return (
         <>

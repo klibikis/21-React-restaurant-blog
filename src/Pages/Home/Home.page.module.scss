@@ -1,0 +1,52 @@
+.container{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background-color: rgb(79, 79, 79);
+    border-radius: 8px;
+    padding: 30px 20px;
+    border: 2px solid white;
+    box-shadow: 1px 1px 5px white;
+}
+.title{
+    font-size: 50px;
+    text-shadow: 1px 1px 3px white;
+}
+.imageContainer{
+    display: flex;
+    width: 31%;
+    border-radius: 300px;
+    position: relative;
+    transition: all 0.2s ease-in;
+    &:hover{
+        transform: scale(1.05);
+        box-shadow: 0 0 15px white;
+        .imageOverlay{
+            visibility: hidden;
+        }
+    }
+}
+.image{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 300px;
+}
+.imageOverlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(39, 39, 39, 0.362);
+    z-index: 2;
+    border-radius: 300px;
+    transition: all 0.2s ease-in;
+}
+.allImages{
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+}

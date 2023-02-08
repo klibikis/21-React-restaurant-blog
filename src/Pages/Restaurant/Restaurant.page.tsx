@@ -36,40 +36,6 @@ const RestaurantPage = () => {
             return res.data
     })}
 
-
-
-    // const getComments = () => {
-    //     return axios.get<RestaurantProps>(`http://localhost:3000/comments/?id=${id}`)
-    //     .then(res => {
-    //         const comentari = res.data
-    //         return comentari
-    // })}
-    
-    // const createComment = (commentValue: string) => {
-    //     return axios.post(`http://localhost:3000/restaurants/${id}/comments`, commentValue)
-    //         .then(res => {
-    //             res.data})}
-
-
-    // const handleCommentSubmit = () => {
-    //     // CreateComment()
-    //     createComment(commentValue)
-    //     setCommentValue("")
-    // }
-
-    // const CreateComment = () => {
-
-    //     const queryClient = useQueryClient()
-    //     const query = useQuery({ queryKey: ['comments']})
-    //     const editPostMutation = useMutation({
-    //         mutationFn: createComment,
-    //         onSuccess: () => {
-    //             queryClient.invalidateQueries({ queryKey: ['restaurants', id] })
-    //         }
-    //     })
-    // }
-
-
     const {status, error, data: restaurant} = useQuery({
         queryKey: ["restaurants", id],
         queryFn: getRestaurant,
