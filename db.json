@@ -52,39 +52,49 @@
       "comment": "Ate salads for 15 euro"
     },
     {
-      "id": 1,
+      "id": 2,
       "postId": 1,
       "comment": "Me like chriistmas tree a lot much"
     },
     {
-      "id": 2,
+      "id": 3,
       "postId": 2,
       "comment": "Fast delivery, cheap prices"
     },
     {
-      "id": 2,
+      "id": 4,
       "postId": 2,
       "comment": "I didn't like delivery mans face"
     },
     {
-      "id": 3,
+      "id": 5,
       "postId": 3,
       "comment": "No place to sit and eat"
     },
     {
-      "id": 3,
+      "id": 6,
       "postId": 3,
       "comment": "Great fame, crappy kebab"
     },
     {
-      "id": 4,
+      "id": 7,
       "postId": 4,
       "comment": "Nom-Nom-Nom"
     },
     {
-      "id": 4,
+      "id": 8,
       "postId": 4,
       "comment": "Stopped here a couple of times while in Riga on business.First time I had just the street burger and fries. Pretty good over all. The second one I had the BBQ burger, again a decent burger. Fries are pretty tasty. Service was quick and very friendly."
+    },
+    {
+      "postId": "2",
+      "comment": "sdfsd",
+      "id": 9
+    },
+    {
+      "postId": "2",
+      "comment": "sdfsdf",
+      "id": 10
     }
   ]
 }

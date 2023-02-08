@@ -1,12 +1,11 @@
-import style from './NewRestaurant.module.scss'
-import { useState } from 'react'
+import style from './RestaurantForm.module.scss'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useQuery, QueryClient, useQueryClient, useMutation } from '@tanstack/react-query'
-import NavBar from '../../assets/Components/NavBar/NavBar'
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useParams } from 'react-router-dom'
 
 type RestaurantProps = {
+    id: any,
     name: string,
     description: string,
     foodStars: number,
@@ -17,7 +16,12 @@ type RestaurantProps = {
     location: string
 }
 
-const NewRestaurant = () => {
+type RestaurantFormProps = {
+    formTitle: string
+    onFormSubmit: (submitProps: RestaurantProps) => void
+}
+
+const RestaurantForm = ({formTitle, onFormSubmit}: RestaurantFormProps) => {
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -27,53 +31,33 @@ const NewRestaurant = () => {
     const [serviceStars, setServiceStars] = useState(1);
     const [valueStars, setValueStars] = useState(1);
     const [atmosphereStars, setAtmosphereStars] = useState(1);
+    let { id } = useParams()
 
-
-    const addReview = (review: RestaurantProps) => {
-        return axios.post(`http://localhost:3000/restaurants`, review
-    )}
-
-    const postReview = () => {
-        const queryClient =  useQueryClient()
-        return useMutation(addReview, {
-            onSuccess: () => {
-                queryClient.invalidateQueries(["restaurants"])
-            }
-        })
-    }
-    
-
-    const { mutate, isLoading, isError, error } = postReview()
 
     const handlePostSubmit = () => {
-        const review = {name, description, image, location, foodStars, serviceStars, valueStars, atmosphereStars}
-        mutate(review)
-        toast.success('Succesfully added', {
-            position: "bottom-left",
-            autoClose: 2300,
-            hideProgressBar: false,
-            closeOnClick: true,
-            theme: "dark",
-            });
-        setName("")
-        setDescription("")
-        setLocation("")
-        setImage("")
-        setFoodStars(1)
-        setValueStars(1)
-        setServiceStars(1)
-        setAtmosphereStars(1)
-        
-        if(isLoading===true)<h1>Loading..........</h1>
-        if(isError===true)<h1>{JSON.stringify(error)}</h1>
+        const submitProps = {id, name, description, image, location, foodStars, serviceStars, valueStars, atmosphereStars}
+        onFormSubmit(submitProps)
     }
+
+    useEffect(() => {
+        axios.get<RestaurantProps>(`http://localhost:3000/restaurants/${id}`)
+        .then(res => {
+            setName(res.data.name) 
+            setDescription(res.data.description) 
+            setImage(res.data.image) 
+            setLocation(res.data.location) 
+            setFoodStars(res.data.foodStars) 
+            setServiceStars(res.data.serviceStars) 
+            setValueStars(res.data.valueStars) 
+            setAtmosphereStars(res.data.atmosphereStars) 
+    })
+    }, [])
 
 
     return (
         <>
-            <NavBar/>
             <div className = { style.container }>
-                <h1 className={style.title}>Add new restaurant review:</h1>
+                <h1 className={style.title}>{formTitle}</h1>
                 <form className={style.form}
                     onSubmit = {(e) => {
                         e.preventDefault()
@@ -85,10 +69,10 @@ const NewRestaurant = () => {
                             Restaurant name:
                         </label>
                         <input 
+                            defaultValue="asdasd"
                             type = "text" 
                             value = {name} 
                             className={style.input} 
-                            placeholder = "Lido" 
                             id = "name" 
                             autoFocus 
                             required
@@ -234,4 +218,4 @@ const NewRestaurant = () => {
 
 
 
-export default NewRestaurant
+export default RestaurantForm

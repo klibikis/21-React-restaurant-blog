@@ -2,6 +2,7 @@ import Restaurant from "../../assets/Components/Restaurant/Restaurant"
 import axios from 'axios'
 import { useQuery } from "@tanstack/react-query"
 import style from './Restaurants.page.module.scss'
+import NavBar from "../../assets/Components/NavBar/NavBar"
 
 type Restaurants = {
     id: number,
@@ -11,7 +12,6 @@ type Restaurants = {
     valueStars: number,
     atmosphereStars: number,
     image: string,
-    onClick?: () => void
 }
 
 const RestaurantsPage = () => {
@@ -33,23 +33,23 @@ const RestaurantsPage = () => {
     if (characterList.status === "error") return <h1>{JSON.stringify(characterList.error)}</h1>
 
     return (
-        <div className={ style.cardWrapper }>
-                {characterList.data.map(({id, name, foodStars, serviceStars, valueStars, atmosphereStars, image}: Restaurants) => (
-                    <Restaurant
-                        id = { id }
-                        key = { id }
-                        name = { name }
-                        image = { image }
-                        foodStars = { foodStars }
-                        serviceStars = {serviceStars}
-                        valueStars = {valueStars}
-                        atmosphereStars = {atmosphereStars}
-                        onClick = {() => {
-                            console.log(id)
-                        } }
-                    />
-                ))}
-        </div>
+        <>
+            <NavBar/>
+            <div className={ style.cardWrapper }>
+                    {characterList.data.map(({id, name, foodStars, serviceStars, valueStars, atmosphereStars, image}: Restaurants) => (
+                        <Restaurant
+                            id = { id }
+                            key = { id }
+                            name = { name }
+                            image = { image }
+                            foodStars = { foodStars }
+                            serviceStars = {serviceStars}
+                            valueStars = {valueStars}
+                            atmosphereStars = {atmosphereStars}
+                        />
+                    ))}
+            </div>
+        </>
     )
 }
 

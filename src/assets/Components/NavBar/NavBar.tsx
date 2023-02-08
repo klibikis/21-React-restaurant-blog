@@ -8,7 +8,7 @@ const NavBar = () => {
     <nav className= { style.wrapper }>
       <NavLink 
         className={ style.navItem }
-        to = "/" 
+        to = "/home" 
         style={({ isActive }) => isActive ? {backgroundColor: "rgb(72, 86, 92)"} : {}}>
         Home
       </NavLink>
