@@ -4,7 +4,6 @@ import NavBar from '../../assets/Components/NavBar/NavBar'
 
 const HomePage = () => {
 
-
     return (
         <>
             <NavBar/>
@@ -14,28 +13,26 @@ const HomePage = () => {
                 <div className={style.allImages}>
                     <Link to = {`/restaurants/`}
                     className = {style.imageContainer}>
-                            <img src = "https://www.gov.il/BlobFolder/news/top-50-best-restaurants-in-the-middle-east/en/restaurant.jpg" className={style.image}>
-                            </img>
-                            <div className={style.imageOverlay}></div>
+                        <img src = "https://www.gov.il/BlobFolder/news/top-50-best-restaurants-in-the-middle-east/en/restaurant.jpg" className={style.image}>
+                        </img>
+                        <div className={style.imageOverlay}></div>
                     </Link>
                     <Link to = {`/restaurants/`}
                     className = {style.imageContainer}>
-                            <img src = "https://www.gov.il/BlobFolder/news/top-50-best-restaurants-in-the-middle-east/en/restaurant.jpg" className={style.image}>
-                            </img>
-                            <div className={style.imageOverlay}></div>
+                        <img src = "https://www.gov.il/BlobFolder/news/top-50-best-restaurants-in-the-middle-east/en/restaurant.jpg" className={style.image}>
+                        </img>
+                        <div className={style.imageOverlay}></div>
                     </Link>
                     <Link to = {`/restaurants/`}
                     className = {style.imageContainer}>
-                            <img src = "https://www.gov.il/BlobFolder/news/top-50-best-restaurants-in-the-middle-east/en/restaurant.jpg" className={style.image}>
-                            </img>
-                            <div className={style.imageOverlay}></div>
+                        <img src = "https://www.gov.il/BlobFolder/news/top-50-best-restaurants-in-the-middle-east/en/restaurant.jpg" className={style.image}>
+                        </img>
+                        <div className={style.imageOverlay}></div>
                     </Link>
                 </div>
             </div>
         </>
     )
 }
-
-
 
 export default HomePage

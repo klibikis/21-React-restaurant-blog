@@ -1,7 +1,6 @@
 import style from './RestaurantForm.module.scss'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useQuery, QueryClient, useQueryClient, useMutation } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
 
 type RestaurantProps = {
@@ -33,14 +32,13 @@ const RestaurantForm = ({formTitle, onFormSubmit}: RestaurantFormProps) => {
     const [atmosphereStars, setAtmosphereStars] = useState(1);
     let { id } = useParams()
 
-
     const handlePostSubmit = () => {
         const submitProps = {id, name, description, image, location, foodStars, serviceStars, valueStars, atmosphereStars}
         onFormSubmit(submitProps)
     }
 
     useEffect(() => {
-        axios.get<RestaurantProps>(`http://localhost:3000/restaurants/${id}`)
+        axios.get<RestaurantProps>(`http://localhost:3006/restaurants/${id}`)
         .then(res => {
             setName(res.data.name) 
             setDescription(res.data.description) 
@@ -52,7 +50,6 @@ const RestaurantForm = ({formTitle, onFormSubmit}: RestaurantFormProps) => {
             setAtmosphereStars(res.data.atmosphereStars) 
     })
     }, [])
-
 
     return (
         <>
@@ -69,7 +66,6 @@ const RestaurantForm = ({formTitle, onFormSubmit}: RestaurantFormProps) => {
                             Restaurant name:
                         </label>
                         <input 
-                            defaultValue="asdasd"
                             type = "text" 
                             value = {name} 
                             className={style.input} 
@@ -215,7 +211,5 @@ const RestaurantForm = ({formTitle, onFormSubmit}: RestaurantFormProps) => {
         </>
     )
 }
-
-
 
 export default RestaurantForm

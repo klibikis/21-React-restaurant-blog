@@ -10,6 +10,7 @@
     padding: 30px 20px;
     border: 2px solid white;
     box-shadow: 1px 1px 5px white;
+    margin-top: 100px;
 }
 .title{
     font-size: 50px;
@@ -82,6 +83,7 @@
     border-radius: 5px;
     font-size: 15px;
     box-shadow: 0 0 4px rgb(255, 255, 255);
+    color: white;
     &:hover{
         box-shadow: 0 0 10px white;
     }

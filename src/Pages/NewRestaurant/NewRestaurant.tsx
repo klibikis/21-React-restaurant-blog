@@ -30,7 +30,7 @@ const NewRestaurant = () => {
 
 
     const addReview = (review: RestaurantProps) => {
-        return axios.post(`http://localhost:3000/restaurants`, review
+        return axios.post(`http://localhost:3006/restaurants`, review
     )}
 
     const postReview = () => {

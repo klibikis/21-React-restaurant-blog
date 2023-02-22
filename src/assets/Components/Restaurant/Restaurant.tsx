@@ -1,7 +1,6 @@
 import style from './Restaurant.module.scss'
 import { Link } from 'react-router-dom'
 
-
 type RestaurantProps = {
     id: number,
     name: string,
@@ -15,23 +14,26 @@ type RestaurantProps = {
 
 const Restaurant = ({id, name, foodStars, serviceStars, valueStars, atmosphereStars, image, onClick}: RestaurantProps) => {
 
-const stars = Math.round((foodStars+serviceStars+valueStars+atmosphereStars)/4)
-
+    const stars = Math.round((foodStars+serviceStars+valueStars+atmosphereStars)/4)
 
     return (
         <Link 
-            onClick = { onClick }
             to = {`/restaurants/${id}`}
             className = { style.post }>
             <div className = { style.overlay }>
-                <h1>{ name }</h1>
-                <p className = { style.readMore }>Click to view more</p>
+                <h1>
+                    { name }
+                </h1>
+                <p className = { style.readMore }>
+                    Click to view more
+                </p>
             </div>
             <img src= { image } className = {style.cardImage}/>
-            <div>{ name }</div>
+            <div>
+                { name }
+            </div>
             {"⭐".repeat(stars)}
         </Link>
-        
     )
 }
 

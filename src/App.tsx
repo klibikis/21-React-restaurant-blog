@@ -13,9 +13,7 @@ function App() {
   return (
     <>
       <div className="App">
-      
       </div>
-
       <Routes>
         <Route path = '/' element = {<LoginPage/>} />
         <Route path = '/home' element = {<HomePage/>} />

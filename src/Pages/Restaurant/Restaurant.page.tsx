@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useParams } from "react-router-dom"
-import { useMutation, useQuery, QueryClient, useQueryClient} from "@tanstack/react-query"
+import { useMutation, useQuery, useQueryClient} from "@tanstack/react-query"
 import style from './Restaurant.page.module.scss'
 import { useState } from "react";
 import Comments from "../../assets/Components/Comments/Comments";
@@ -8,7 +8,6 @@ import NavBar from "../../assets/Components/NavBar/NavBar";
 import RestaurantForm from "../../assets/Components/RestaurantForm/RestaurantForm";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 type RestaurantProps = {
     id: number,
@@ -26,19 +25,21 @@ type ID = {
 }
 
 const RestaurantPage = () => {
-
-    const { id } = useParams<ID>()
-    const [commentValue, setCommentValue] = useState("")
+    let { id } = useParams<ID>()
+    if(!id){
+        id = "0";
+    }
     const [isHidden, setIsHidden] = useState(true)
-    let user = localStorage.getItem('user')
+    const user = localStorage.getItem('user')
 
     const getRestaurant = () => {
-        return axios.get<RestaurantProps>(`http://localhost:3000/restaurants/${id}`)
+        return axios.get<RestaurantProps>(`http://localhost:3006/restaurants/${id}`)
         .then(res => {
             return res.data
     })}
+    
     const editRestaurant = ({id, name, description, foodStars, serviceStars, valueStars, atmosphereStars, image, location}: RestaurantProps) => {
-        return axios.patch<RestaurantProps>("http://localhost:3000/restaurants/" + id, {
+        return axios.patch<RestaurantProps>("http://localhost:3006/restaurants/" + id, {
             name,
             description,
             foodStars,
@@ -79,32 +80,33 @@ const RestaurantPage = () => {
         queryFn: getRestaurant,
     })
 
-    if (status === "loading") return <h1>Loading...</h1>
-    if (status === "error") return <h1>{JSON.stringify(error)}</h1>
-
+    if (status === "loading"){
+        return <h1>Loading...</h1>
+    } 
+    if (status === "error"){
+        return <h1>{JSON.stringify(error)}</h1>
+    } 
 
     return (
         <>
-            
             {!isHidden && <div className={style.editReviewModal}>
-
                 <div className={style.editReviewContainer}>
                     <RestaurantForm
                     onFormSubmit = {(restaurantEditData) => {
                         handleFormSubmit(restaurantEditData)
                     }}
                     formTitle = "Edit review"/>
-                    <button  className={style.closeEdit} onClick = {()=> {
+                    <button  
+                        className={style.closeEdit} 
+                        onClick = {()=> {
                             setIsHidden(!isHidden)
-                            }}>
-                                x
-                        </button>
+                        }}>
+                        ✘
+                    </button>
                 </div>
             </div>}
-            
             <NavBar/>
             <div className = { style.container }>
-                
                 <div className={style.editContainer}>
                     <h1 className= { style.title }>{ restaurant.name }</h1>
                     {user === "Admin" && 
@@ -112,9 +114,9 @@ const RestaurantPage = () => {
                             onClick = {() => {
                             setIsHidden(!isHidden)
                             }}>EDIT
-                        </button>}
+                        </button>
+                    }
                 </div>
-                
                 <div className = { style.reviewContainer }>
                     <div className = { style.review }>
                         {restaurant.description}
@@ -130,13 +132,11 @@ const RestaurantPage = () => {
                 </div>
                 <Comments
                 key = {id}
-                id = {id}
+                id = {+id}
                 />
             </div>
         </>
     )
 }
-
-
 
 export default RestaurantPage
